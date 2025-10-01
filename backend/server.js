@@ -6,10 +6,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Configure CORS to allow requests from your frontend's Vercel URL
+// Configure CORS to allow requests from the specified origin
 const corsOptions = {
-  origin: 'https://fund-project-neon.vercel.app', // Your frontend's URL on Vercel
-  optionsSuccessStatus: 200 // For legacy browser support
+  origin: process.env.CORS_ORIGIN || 'http://localhost:3000', // Dynamically set origin
+  optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
 app.use(express.json());
