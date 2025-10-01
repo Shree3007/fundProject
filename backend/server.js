@@ -6,12 +6,9 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Configure CORS to allow requests from the specified origin
-const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000', // Dynamically set origin
-  optionsSuccessStatus: 200
-}
-app.use(cors(corsOptions));
+// Temporarily enable CORS for all origins for debugging purposes.
+// IMPORTANT: Revert this to a specific origin (or environment variable) for production!
+app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
