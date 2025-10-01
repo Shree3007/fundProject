@@ -1,0 +1,69 @@
+.table-responsive-scroll {
+  max-height: 80vh; /* Adjust as needed */
+  overflow: scroll;
+  position: relative;
+}
+
+.customer-summary-table {
+  border-collapse: collapse; /* Ensure borders collapse for sticky cells */
+  width: 100%;
+}
+
+.customer-summary-table th,
+.customer-summary-table td {
+  padding: 8px;
+  border: 1px solid #dee2e6;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa; /* Light grey background for sticky header */
+  z-index: 10; /* Ensure header is above scrolling content */
+}
+
+.sticky-col-1 {
+  position: sticky;
+  left: 0;
+  background-color: #f8f9fa; /* Light grey background for sticky column */
+  z-index: 9; /* Ensure column is above scrolling content */
+}
+
+.sticky-col-2 {
+  position: sticky;
+  left: 100px; /* Adjust based on the width of the first column */
+  background-color: #f8f9fa; /* Light grey background for sticky column */
+  z-index: 9; /* Ensure column is above scrolling content */
+}
+
+/* Adjust z-index for the intersection of sticky header and sticky columns */
+.sticky-header.sticky-col-1 {
+  z-index: 11;
+}
+
+.sticky-header.sticky-col-2 {
+  z-index: 11;
+}
+
+.overall-totals-row {
+  position: sticky;
+  bottom: 0;
+  background-color: #e9ecef; /* Slightly darker background for footer row */
+  z-index: 10;
+}
+
+.sticky-bottom {
+  position: sticky;
+  bottom: 0;
+  background-color: #e9ecef; /* Match overall-totals-row background */
+  z-index: 12; /* Ensure these are above other sticky elements */
+}
+
+.overall-totals-row .sticky-col-1 {
+    left: 0;
+}
+
+.overall-totals-row .sticky-col-2 {
+    left: 100px; /* Needs to match the left position of sticky-col-2 */
+}
